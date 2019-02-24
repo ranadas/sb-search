@@ -3,6 +3,8 @@
 
 # Idea
 .idea/
+datasets/717_20170904123036/*.zip
+datasets/717_20170904123036/717_webhose-2017-01_20170904123520/*.json
 
 # Log file
 *.log
