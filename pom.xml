@@ -13,10 +13,11 @@
 
     <modules>
         <module>datamodelservice</module>
+        <module>datagridservice</module>
 	<!--
         <module>searchservice</module>
         <module>elasticsearchservice</module>
-        <module>datagridservice</module>
+
 	-->
     </modules>
 </project>
