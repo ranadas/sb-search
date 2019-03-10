@@ -1,0 +1,6 @@
+
+
+scheduler_name: gridScheduler
+scheduler_period_seconds: 10
+endpoint:
+  url:  http://localhost:8081/dataservice/showRand

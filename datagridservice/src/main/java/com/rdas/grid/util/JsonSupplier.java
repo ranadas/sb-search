@@ -4,15 +4,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rdas.blogpostsmodel.BlogPostBase;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,15 +26,22 @@ public class JsonSupplier {
     @Getter
     private List<Path> fileList;
 
-    @Autowired
     private ObjectMapper gridJsonMapper;
+
+    @Autowired
+    public JsonSupplier(@Qualifier("gridJsonMapper") ObjectMapper jsonMapper) {
+        this.gridJsonMapper = jsonMapper;
+    }
 
     @PostConstruct
     public void init() throws IOException {
         fileList = Collections.synchronizedList(new ArrayList());
-        Files.newDirectoryStream(Paths.get("datasets/"),
-                path -> path.toString().endsWith(".json"))
-                .forEach(f -> fileList.add(f.toAbsolutePath()));
+        File file = ResourceUtils.getFile("classpath:datasets");
+        if (file.isDirectory()) {
+            Path datasetPath = file.toPath();
+            DirectoryStream<Path> dirStream = Files.newDirectoryStream(datasetPath, "*." + "json");
+            dirStream.forEach(f -> fileList.add(f.toAbsolutePath()));
+        }
     }
 
     public BlogPostBase getRandomBlogPost() throws IOException {
