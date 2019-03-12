@@ -18,16 +18,19 @@ public class BlogServiceClient {
 
     private final RestTemplate restTemplate;
     private final JsonSupplier jsonSupplier;
-    private final String endpointURL;
+    private final String endpointGetURL;
+    private final String endpointPostURL;
 
     public BlogServiceClient(RestTemplateBuilder restTemplateBuilder, JsonSupplier supplier,
-                             @Value("${endpoint.url}") String endpointURL) {
+                             @Value("${endpoint.geturl}") String endpointGetURL,
+                             @Value("${endpoint.posturl}") String endpointPostURL) {
         restTemplate = restTemplateBuilder.build();
         jsonSupplier = supplier;
-        this.endpointURL=endpointURL;
+        this.endpointGetURL = endpointGetURL;
+        this.endpointPostURL = endpointPostURL;
     }
 
-    public BlogPostBase getBlog() throws IOException {
+    public BlogPostBase getBlogData() throws IOException {
         //TODO : use the rest client to get the blog instead of json supplier
         //return jsonSupplier.getRandomBlogPost();
         //String formatted_URL = MessageFormat.format(uri, value1, value2);
@@ -38,7 +41,7 @@ public class BlogServiceClient {
 
         try {
             ResponseEntity<BlogPostBase> response = restTemplate.exchange(
-                    endpointURL,
+                    endpointGetURL,
                     HttpMethod.GET,
                     entity,
                     BlogPostBase.class);
@@ -47,5 +50,10 @@ public class BlogServiceClient {
             log.error(e.getLocalizedMessage());
             throw new RuntimeException(e.getMessage());
         }
+    }
+
+    public Boolean sendAcknowledgement() {
+        // TODO POST to  endpointPostURL
+        return true;
     }
 }

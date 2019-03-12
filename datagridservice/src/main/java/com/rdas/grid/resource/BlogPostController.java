@@ -22,6 +22,6 @@ public class BlogPostController {
 
     @GetMapping("/showRand")
     public BlogPostBase getBlog() throws IOException {
-        return blogServiceClient.getBlog();
+        return blogServiceClient.getBlogData();
     }
 }

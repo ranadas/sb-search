@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.UUID;
 
+//https://dzone.com/articles/distributed-scheduling-and-servicing-in-java
 @Slf4j
 public class SimpleClusteredTask implements ClusteredTask, Runnable, Serializable {
     private transient LocalResource localResource;

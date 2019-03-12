@@ -1,6 +1,15 @@
 
 
-scheduler_name: gridScheduler
-scheduler_period_seconds: 10
+scheduler:
+  name: gridScheduler
+  rate: 20
+
+#scheduler_name: gridScheduler
+#scheduler_period_seconds: 20
 endpoint:
-  url:  http://localhost:8081/dataservice/showRand
+  geturl:  http://localhost:8081/dataservice/showRand
+  posturl:  http://localhost:8081/dataservice/showRand
+
+messagequeue:
+  topic:
+    name: blogposttopic
