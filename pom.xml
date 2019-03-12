@@ -14,6 +14,7 @@
     <modules>
         <module>datamodelservice</module>
         <module>datagridservice</module>
+        <module>datasetsetvice</module>
 	<!--
         <module>searchservice</module>
         <module>elasticsearchservice</module>
