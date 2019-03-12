@@ -2,7 +2,9 @@ package com.rdas.blogpostsmodel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Gplus {
+import java.io.Serializable;
+
+public class Gplus implements Serializable {
     private long shares;
 
     @JsonProperty("shares")

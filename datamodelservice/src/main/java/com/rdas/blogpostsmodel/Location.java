@@ -6,8 +6,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Getter @Setter @ToString @EqualsAndHashCode
-public class Location {
+public class Location implements Serializable {
     @JsonProperty("name")
     private String name;
 

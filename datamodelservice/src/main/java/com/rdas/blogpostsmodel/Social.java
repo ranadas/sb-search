@@ -2,7 +2,9 @@ package com.rdas.blogpostsmodel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Social {
+import java.io.Serializable;
+
+public class Social implements Serializable {
     private Gplus gplus;
     private Gplus pinterest;
     private Gplus vk;

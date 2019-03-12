@@ -2,7 +2,9 @@ package com.rdas.blogpostsmodel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Facebook {
+import java.io.Serializable;
+
+public class Facebook implements Serializable {
     private long likes;
     private long shares;
     private long comments;

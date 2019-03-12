@@ -6,11 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-public class Thread {
+public class Thread implements Serializable {
     @JsonProperty("social")
     private Social social;
     @JsonProperty("site_full")

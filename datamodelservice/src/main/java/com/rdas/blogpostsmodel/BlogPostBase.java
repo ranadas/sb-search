@@ -6,11 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-public class BlogPostBase {
+public class BlogPostBase implements Serializable {
     @JsonProperty("organizations")
     private Object[] organizations;
     @JsonProperty("uuid")
