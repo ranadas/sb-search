@@ -9,16 +9,17 @@
     <packaging>pom</packaging>
 
     <name>sboot-datamine-parent</name>
-    <description>Spring Boot datamining  parent</description>
+    <description>Spring Boot datamining parent</description>
 
     <modules>
         <module>datamodelservice</module>
         <module>datagridservice</module>
         <module>datasetsetvice</module>
-	<!--
-        <module>searchservice</module>
-        <module>elasticsearchservice</module>
+        <module>KTMain</module>
+        <!--
+            <module>searchservice</module>
+            <module>elasticsearchservice</module>
 
-	-->
+        -->
     </modules>
 </project>
