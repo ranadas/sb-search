@@ -1,4 +1,4 @@
-package com.rdas.KTMain
+package com.rdas.consumer
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

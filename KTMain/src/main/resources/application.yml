@@ -1,1 +1,8 @@
 
+#//http://localhost:8081/dataservice/showRand
+remoteserver:
+  host: localhost
+  port: 8081
+  context: dataservice
+  geturl:  /showRand
+  posturl:  /showRand

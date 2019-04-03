@@ -1,4 +1,4 @@
-package com.rdas.KTMain
+package com.rdas.consumer
 
 import org.junit.Test
 import org.junit.runner.RunWith
